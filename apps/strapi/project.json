@@ -5,11 +5,18 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          { "command": "npx nx run strapi:build" },
           { "command": "npm start" }
         ],
         "cwd": "apps/strapi",
         "parallel": false
+      },
+      "dependsOn": ["build"]
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run build",
+        "cwd": "apps/strapi"
       }
     }
   }
