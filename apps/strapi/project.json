@@ -1,0 +1,16 @@
+{
+  "name": "strapi",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          { "command": "npx nx run strapi:build" },
+          { "command": "npm start" }
+        ],
+        "cwd": "apps/strapi",
+        "parallel": false
+      }
+    }
+  }
+}
