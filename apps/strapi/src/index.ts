@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 // import type { Core } from '@strapi/strapi';
 
 export default {

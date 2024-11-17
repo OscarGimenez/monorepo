@@ -1,4 +1,5 @@
 const nx = require('@nx/eslint-plugin');
+const typescript = require('@typescript-eslint/eslint-plugin');
 
 module.exports = [
   ...nx.configs['flat/base'],
@@ -10,6 +11,8 @@ module.exports = [
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     rules: {
+      ...typescript.configs.recommended.rules,
+      '@typescript-eslint/no-require-imports': 'off',
       '@nx/enforce-module-boundaries': [
         'error',
         {
@@ -23,6 +26,7 @@ module.exports = [
           ],
         },
       ],
+      '@typescript-eslint/no-empty-function': ['error', { allow: [] }],
     },
   },
   {
