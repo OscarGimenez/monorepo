@@ -67,12 +67,5 @@
         "linter": "eslint"
       }
     }
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "options": {
-        "cacheableOperations": ["build", "serve"]
-      }
-    }
   }
 }
