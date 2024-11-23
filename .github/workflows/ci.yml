@@ -27,7 +27,7 @@ jobs:
       # Cache node_modules
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
@@ -35,8 +35,11 @@ jobs:
           npm ci --legacy-peer-deps
           npx playwright install --with-deps
 
+      - name: Reset Nx Cache
+        run: npx nx reset
+
       - name: Linting
-        run: npx nx affected -t lint
+        run: npx nx affected -t lint --verbose
 
       - name: Testing
         run: npx nx affected -t test
