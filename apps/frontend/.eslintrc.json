@@ -1,3 +1,18 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "plugin:@nx/react",
+    "next",
+    "next/core-web-vitals"
+  ],
+  "rules": {},
+  "env": {
+    "jest": true
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {}
+    }
+  ],
+  "ignorePatterns": ["!**/*"]
 }
